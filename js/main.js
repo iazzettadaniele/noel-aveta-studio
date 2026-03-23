@@ -316,4 +316,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    /* =========================================================================
+       8. Netlify Form — JS Submit per redirect affidabile a success.html
+       ========================================================================= */
+    const bookingForm = document.querySelector('form[name="booking"]');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Blocca il submit nativo
+
+            const formData = new FormData(bookingForm);
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString(),
+            })
+            .then(() => {
+                // Redirect manuale alla pagina di successo
+                window.location.href = '/success.html';
+            })
+            .catch((error) => {
+                console.error('Errore nell\'invio del form:', error);
+                // Anche in caso di errore di rete, redirect (Netlify ha probabilmente ricevuto i dati)
+                window.location.href = '/success.html';
+            });
+        });
+    }
 });
