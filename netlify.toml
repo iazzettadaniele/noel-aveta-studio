@@ -2,7 +2,14 @@
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
-  
+
+# Redirect per success page del form Netlify
+[[redirects]]
+  from = "/"
+  to = "/success.html"
+  status = 200
+  conditions = {Role = ["editor"]}
+
 # Headers per evitare problemi di cache sul json del CMS
 [[headers]]
   for = "/data/content.json"
