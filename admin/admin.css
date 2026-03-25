@@ -1,18 +1,18 @@
 /* 
-   Noel Aveta Studio - ULTRA LUXURY DARK THEME for Decap CMS 
-   Avant-garde editorial aesthetics for maximum visual impact.
+   Noel Aveta Studio - Ultra-Clear Minimalist Theme for Decap CMS 
+   Designed for maximum legibility, brightness, and ease of use.
 */
 
 :root {
-  --cms-color-base: #f9f9f9; /* Text color */
-  --cms-color-primary: #a38c71; /* High-end beige/gold */
-  --cms-color-primary-hover: #bda68a;
-  --cms-color-bg: #0a0a0a; /* Deep satisfying black */
-  --cms-color-sidebar: #111111; 
-  --cms-color-card: #141414;
-  --cms-border-color: #2a2a2a;
+  --cms-color-base: #222222; /* High-contrast text color */
+  --cms-color-primary: #333333; /* Dark gray for primary actions, sober and clear */
+  --cms-color-primary-hover: #111111;
+  --cms-color-bg: #f9f9fb; /* Very soft light gray/blue background for the dashboard */
+  --cms-color-sidebar: #ffffff; /* Pure white sidebar */
+  --cms-color-card: #ffffff; /* Pure white content cards */
+  --cms-border-color: #ebebeb; /* Soft delicate borders */
   --cms-font-main: 'Montserrat', sans-serif;
-  --cms-border-radius: 4px; /* Sharper edges for luxury feel */
+  --cms-border-radius: 6px;
 }
 
 /* 1. GLOBAL TYPOGRAPHY */
@@ -21,38 +21,38 @@ body, [class*="nc-app"], [class*="nc-entryEditor"], [class*="Container"], button
   color: var(--cms-color-base) !important;
 }
 
-/* Hide default Decap scrollbars / style them dark */
+/* Hide default Decap scrollbars / style them clean */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--cms-color-bg); 
+  background: transparent; 
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--cms-color-primary); 
+  background: #dddddd; 
   border-radius: 4px;
 }
 
 /* 2. TOP HEADER BAR */
 [class*="AppHeader"] {
-  background-color: var(--cms-color-sidebar) !important;
+  background-color: #ffffff !important;
   border-bottom: 1px solid var(--cms-border-color) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.02) !important; /* Very subtle shadow */
 }
 
-/* Logo image scaling if present */
+/* Standard Logo color */
 [class*="AppHeader"] img {
-  filter: brightness(0) invert(1) !important; /* Make sure the logo is white on black */
+  filter: none !important;
 }
 
 [class*="AppHeaderSiteLink"], [class*="AppHeaderNavList"] a {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   text-transform: uppercase !important;
-  letter-spacing: 3px !important;
-  color: #888888 !important;
-  font-size: 11px !important;
-  transition: all 0.3s ease !important;
+  letter-spacing: 1px !important;
+  color: #666666 !important;
+  font-size: 13px !important;
+  transition: all 0.2s ease !important;
 }
 
 [class*="AppHeaderNavList"] a:hover {
@@ -74,11 +74,11 @@ body, [class*="nc-app"], [class*="nc-entryEditor"], [class*="Container"], button
 }
 
 [class*="CollectionTopHeading"] {
-  font-weight: 300 !important;
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  color: #ffffff !important;
-  font-size: 24px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0px !important;
+  color: var(--cms-color-base) !important;
+  font-size: 26px !important;
+  text-transform: none !important; /* Più chiaro e leggibile */
 }
 
 /* Sidebar styling */
@@ -88,41 +88,44 @@ body, [class*="nc-app"], [class*="nc-entryEditor"], [class*="Container"], button
 }
 
 [class*="SidebarHeading"] {
-  color: #555555 !important;
-  font-size: 10px !important;
-  letter-spacing: 4px !important;
+  color: #888888 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
 }
 
 [class*="SearchContainer"] input {
-  background-color: #1a1a1a !important;
-  border: 1px solid #333 !important;
-  color: #fff !important;
-  border-radius: 20px !important;
+  background-color: #f5f5f5 !important;
+  border: 1px solid transparent !important;
+  color: #333 !important;
+  border-radius: 8px !important;
 }
 
 [class*="SearchContainer"] input:focus {
-  border-color: var(--cms-color-primary) !important;
-  background-color: #222 !important;
+  border-color: #cccccc !important;
+  background-color: #ffffff !important;
 }
 
 [class*="SidebarNavLink"] {
-  border-radius: 0 !important;
-  border-left: 2px solid transparent !important;
-  color: #aaaaaa !important;
-  letter-spacing: 1px !important;
-  font-size: 13px !important;
+  border-radius: var(--cms-border-radius) !important;
+  border-left: 3px solid transparent !important;
+  color: #555555 !important;
+  font-weight: 500 !important;
   background-color: transparent !important;
 }
 
 [class*="SidebarNavLink"]:hover {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
+  background-color: #f4f4f4 !important;
+  color: var(--cms-color-base) !important;
 }
 
 [class*="SidebarNavLinkActive"] {
-  background-color: #111111 !important;
-  color: var(--cms-color-primary) !important;
-  border-left: 2px solid var(--cms-color-primary) !important;
+  background-color: #ffffff !important;
+  color: var(--cms-color-base) !important;
+  font-weight: 600 !important;
+  border-left: 3px solid var(--cms-color-primary) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
 }
 
 /* Dashboard Cards */
@@ -130,109 +133,103 @@ body, [class*="nc-app"], [class*="nc-entryEditor"], [class*="Container"], button
   background-color: var(--cms-color-card) !important;
   border-radius: var(--cms-border-radius) !important;
   border: 1px solid var(--cms-border-color) !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02) !important;
+  transition: all 0.2s ease !important;
 }
 
 [class*="CardContainer"]:hover, [class*="EntryCard"]:hover {
-  transform: translateY(-5px) !important;
-  border-color: var(--cms-color-primary) !important;
-  box-shadow: 0 15px 40px rgba(138, 115, 92, 0.1) !important;
+  transform: translateY(-2px) !important;
+  border-color: #dddddd !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05) !important;
 }
 
 [class*="CardTitle"] {
-  color: #eeeeee !important;
-  font-weight: 400 !important;
-  letter-spacing: 1px !important;
+  color: var(--cms-color-base) !important;
+  font-weight: 600 !important;
 }
 
 /* 4. EDITOR PANE */
 [class*="ControlPaneContainer"] {
-  background-color: var(--cms-color-bg) !important;
+  background-color: #ffffff !important; /* Sfondo bianchissimo per scrivere bene */
 }
 
 /* Form Groups / Container */
 [class*="ControlContainer"] {
-  background-color: var(--cms-color-sidebar) !important;
+  background-color: #ffffff !important;
   border: 1px solid var(--cms-border-color) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+  box-shadow: none !important;
+  border-radius: var(--cms-border-radius) !important;
 }
 
 /* Labels */
 [class*="ControlLabel"] {
-  color: #888888 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 2px !important;
-  font-size: 11px !important;
-  margin-bottom: 12px !important;
-  border-bottom: 1px solid #222 !important;
-  padding-bottom: 8px !important;
+  color: #444444 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  text-transform: none !important;
+  letter-spacing: 0px !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 15px !important;
 }
 
 /* Text Inputs / Textareas / Selects */
 [class*="ControlContainer"] input[type="text"], 
 [class*="ControlContainer"] textarea,
 [class*="ControlContainer"] select {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
-  border: 1px solid #333 !important;
-  border-radius: 4px !important;
+  background-color: #fdfdfd !important;
+  color: #111111 !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 6px !important;
   font-size: 14px !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   padding: 12px 14px !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.2s ease !important;
 }
 
 [class*="ControlContainer"] input:focus, 
 [class*="ControlContainer"] textarea:focus {
-  border-color: var(--cms-color-primary) !important;
-  background-color: #222 !important;
-  box-shadow: 0 0 0 1px var(--cms-color-primary) !important;
+  border-color: #888888 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05) !important;
   outline: none !important;
 }
 
-/* Image Widget specifically */
+/* Image Widget */
 [class*="ImageWrapper"] {
-  border: 1px dashed #444 !important;
-  background-color: #111 !important;
+  border: 1px dashed #cccccc !important;
+  background-color: #f9f9f9 !important;
 }
 
 /* Hints */
 [class*="Hint"] {
-  color: #777777 !important;
-  background-color: #141414 !important;
-  border-left: 2px solid var(--cms-color-primary) !important;
+  color: #666666 !important;
+  background-color: #f5f5f5 !important;
+  border-left: 2px solid #cccccc !important;
   padding: 8px 12px !important;
-  font-size: 11px !important;
-  letter-spacing: 0.5px !important;
+  font-size: 12px !important;
 }
 
 /* Buttons (Save / Publish) */
 [class*="Button"] {
   font-family: var(--cms-font-main) !important;
-  text-transform: uppercase !important;
-  font-weight: 500 !important;
-  letter-spacing: 2px !important;
-  border-radius: 20px !important;
-  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important; /* Meno smussati, più professionali */
 }
 
 [class*="ToolbarContainer"] {
-  background-color: rgba(10,10,10,0.9) !important;
-  backdrop-filter: blur(10px);
+  background-color: #ffffff !important;
   border-top: 1px solid var(--cms-border-color) !important;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.02) !important;
 }
 
-/* Primary "Publish" Button inside the Editor */
 [class*="ToolbarContainer"] button[class*="css-"] {
   background-color: var(--cms-color-primary) !important;
   color: #ffffff !important;
-  border: none !important;
 }
 
 [class*="ToolbarContainer"] button[class*="css-"]:hover {
   background-color: var(--cms-color-primary-hover) !important;
-  box-shadow: 0 4px 15px rgba(138, 115, 92, 0.4) !important;
 }
 
 /* Preview Pane Header */
