@@ -1,64 +1,226 @@
-/* Custom CSS to make Decap CMS look less technical and more premium */
+/* 
+   Noel Aveta Studio - Premium Decap CMS Admin Theme 
+   This styles the UI of the CMS to be cleaner, softer, and more readable.
+*/
 
 :root {
-  --cms-color-base: #1a1a1a;
-  --cms-color-primary: #8a735c;
+  --cms-color-base: #141414;
+  --cms-color-primary: #8a735c; /* Gold/Beige accent from Noel Aveta */
   --cms-color-bg: #fdfdfd;
+  --cms-color-sidebar: #ffffff;
+  --cms-color-card: #ffffff;
+  --cms-border-color: #f0f0f0;
   --cms-font-main: 'Montserrat', sans-serif;
+  --cms-border-radius: 8px;
+  --cms-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  --cms-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-/* Global Typography Override for the Admin Panel */
-body, [class*="nc-app"], [class*="nc-entryEditor"], [class*="Container"] {
+/* 1. GLOBAL TYPOGRAPHY */
+body, [class*="nc-app"], [class*="nc-entryEditor"], [class*="Container"], button, input, h1, h2, h3, h4, span, p, a, div {
   font-family: var(--cms-font-main) !important;
+  color: var(--cms-color-base);
 }
 
-/* Header & Sidebar */
-[class*="AppHeader"] {
-  background-color: var(--cms-color-base) !important;
-  border-bottom: 2px solid var(--cms-color-primary) !important;
-}
-
-[class*="SidebarContainer"] {
+/* General Layout Background */
+[class*="AppMainContainer"] {
   background-color: var(--cms-color-bg) !important;
 }
 
-/* Improve left pane editor UI */
-[class*="ControlPaneContainer"] {
-  background-color: #fafafa !important;
-  padding: 40px !important;
+/* 2. TOP HEADER BAR */
+[class*="AppHeader"] {
+  background-color: var(--cms-color-base) !important;
+  border-bottom: 2px solid var(--cms-color-primary) !important;
+  padding: 0 40px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
 }
 
-/* Style the form fields to look more elegant */
-[class*="ControlContainer"] {
-  border: 1px solid #eaeaea !important;
-  border-radius: 8px !important;
-  padding: 24px !important;
-  margin-bottom: 24px !important;
-  background-color: white !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
+[class*="AppHeader"] a, [class*="AppHeader"] button {
+  color: #eeeeee !important;
 }
 
-/* Labels */
-[class*="ControlLabel"] {
+/* Header Links (CONTENUTI, MEDIA) */
+[class*="AppHeaderSiteLink"], [class*="AppHeaderNavList"] a {
   font-weight: 500 !important;
-  font-size: 1.1rem !important;
-  color: var(--cms-color-base) !important;
+  letter-spacing: 2px !important;
+  font-size: 13px !important;
   text-transform: uppercase !important;
-  letter-spacing: 1px !important;
+  transition: all 0.3s ease !important;
+  color: #aaaaaa !important;
+}
+
+[class*="AppHeaderNavList"] a:hover {
+  color: var(--cms-color-primary) !important;
+}
+
+[class*="AppHeaderNavList"] a[class*="active"] {
+  color: #ffffff !important;
+  border-bottom: 2px solid var(--cms-color-primary) !important;
+  background: transparent !important;
+}
+
+
+/* 3. SIDEBAR (Raccolte) */
+[class*="SidebarContainer"] {
+  background-color: var(--cms-color-sidebar) !important;
+  border-right: 1px solid var(--cms-border-color) !important;
+  padding: 40px 30px !important;
+}
+
+[class*="SidebarHeading"] {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: #999 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  margin-bottom: 24px !important;
+}
+
+/* Search input */
+[class*="SearchContainer"] input {
+  background-color: #f7f7f7 !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 20px !important;
+  padding: 12px 15px 12px 40px !important;
+  font-size: 14px !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 30px !important;
+}
+
+[class*="SearchContainer"] input:focus {
+  background-color: #ffffff !important;
+  border-color: var(--cms-color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(138, 115, 92, 0.1) !important;
+  outline: none !important;
+}
+
+/* Sidebar Links ("Contenuti del Sito") */
+[class*="SidebarNavLink"] {
+  border-radius: var(--cms-border-radius) !important;
+  margin-bottom: 8px !important;
+  color: #444 !important;
+  font-weight: 500 !important;
+  padding: 12px 20px !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease !important;
+  background-color: transparent !important;
+}
+
+[class*="SidebarNavLink"]:hover {
+  background-color: #fafafa !important;
+  color: var(--cms-color-base) !important;
+}
+
+[class*="SidebarNavLinkActive"] {
+  background-color: #fdfdfd !important;
+  color: var(--cms-color-primary) !important;
+  border-left: 3px solid var(--cms-color-primary) !important;
+  box-shadow: var(--cms-shadow) !important;
+}
+
+
+/* 4. MAIN DASHBOARD CONTENT AREA */
+[class*="CollectionContainer"], [class*="CollectionTop"] {
+  padding: 50px 60px !important;
+  background-color: var(--cms-color-bg) !important;
+}
+
+[class*="CollectionTop"] h1 {
+  font-size: 32px !important;
+  font-weight: 300 !important;
+  color: var(--cms-color-base) !important;
+  letter-spacing: -0.5px !important;
+  margin-bottom: 40px !important;
+}
+
+/* Cards (e.g. "Homepage & Contenuti") */
+[class*="CardContainer"], [class*="EntryCard"] {
+  background-color: var(--cms-color-card) !important;
+  border-radius: var(--cms-border-radius) !important;
+  box-shadow: var(--cms-shadow) !important;
+  border: 1px solid var(--cms-border-color) !important;
+  padding: 30px !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+[class*="CardContainer"]:hover, [class*="EntryCard"]:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--cms-shadow-hover) !important;
+  border-color: #e0e0e0 !important;
+  cursor: pointer !important;
+}
+
+[class*="CardTitle"] {
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  color: var(--cms-color-base) !important;
+}
+
+
+/* 5. EDITOR LEFT PANE (INSIDE ENTRY) */
+[class*="ControlPaneContainer"] {
+  background-color: var(--cms-color-bg) !important;
+  padding: 50px !important;
+}
+
+/* Editor Form Fields */
+[class*="ControlContainer"] {
+  border: 1px solid var(--cms-border-color) !important;
+  border-radius: var(--cms-border-radius) !important;
+  padding: 30px !important;
+  margin-bottom: 30px !important;
+  background-color: var(--cms-color-card) !important;
+  box-shadow: var(--cms-shadow) !important;
+}
+
+/* Field Labels */
+[class*="ControlLabel"] {
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  color: #777 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
   margin-bottom: 15px !important;
+  border-bottom: 1px solid var(--cms-border-color);
+  padding-bottom: 10px;
 }
 
-/* Hints */
+/* Field Inputs inside editor */
+[class*="ControlContainer"] input[type="text"], 
+[class*="ControlContainer"] textarea {
+  border: 1px solid #ddd !important;
+  border-radius: 6px !important;
+  padding: 12px 15px !important;
+  font-size: 15px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="ControlContainer"] input[type="text"]:focus, 
+[class*="ControlContainer"] textarea:focus {
+  border-color: var(--cms-color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(138, 115, 92, 0.1) !important;
+}
+
+/* Hints under fields */
 [class*="Hint"] {
-  font-style: italic !important;
-  color: #666 !important;
-  margin-top: 8px !important;
+  font-style: normal !important;
+  font-size: 12px !important;
+  color: #888 !important;
+  margin-top: 10px !important;
+  background: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border-left: 2px solid var(--cms-color-primary);
 }
 
-/* Buttons */
+/* Action Buttons (Save, Publish) */
 [class*="Button"] {
-  border-radius: 4px !important;
+  border-radius: 30px !important;
   font-family: var(--cms-font-main) !important;
   text-transform: uppercase !important;
   letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  padding: 10px 24px !important;
 }
