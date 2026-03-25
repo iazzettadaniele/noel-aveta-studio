@@ -1,0 +1,64 @@
+/* Custom CSS to make Decap CMS look less technical and more premium */
+
+:root {
+  --cms-color-base: #1a1a1a;
+  --cms-color-primary: #8a735c;
+  --cms-color-bg: #fdfdfd;
+  --cms-font-main: 'Montserrat', sans-serif;
+}
+
+/* Global Typography Override for the Admin Panel */
+body, [class*="nc-app"], [class*="nc-entryEditor"], [class*="Container"] {
+  font-family: var(--cms-font-main) !important;
+}
+
+/* Header & Sidebar */
+[class*="AppHeader"] {
+  background-color: var(--cms-color-base) !important;
+  border-bottom: 2px solid var(--cms-color-primary) !important;
+}
+
+[class*="SidebarContainer"] {
+  background-color: var(--cms-color-bg) !important;
+}
+
+/* Improve left pane editor UI */
+[class*="ControlPaneContainer"] {
+  background-color: #fafafa !important;
+  padding: 40px !important;
+}
+
+/* Style the form fields to look more elegant */
+[class*="ControlContainer"] {
+  border: 1px solid #eaeaea !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+  margin-bottom: 24px !important;
+  background-color: white !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
+}
+
+/* Labels */
+[class*="ControlLabel"] {
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+  color: var(--cms-color-base) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 15px !important;
+}
+
+/* Hints */
+[class*="Hint"] {
+  font-style: italic !important;
+  color: #666 !important;
+  margin-top: 8px !important;
+}
+
+/* Buttons */
+[class*="Button"] {
+  border-radius: 4px !important;
+  font-family: var(--cms-font-main) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
