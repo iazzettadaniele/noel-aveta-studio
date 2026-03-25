@@ -1,86 +1,241 @@
 /* 
-   Noel Aveta Studio - Premium Decap CMS Admin Theme 
-   Minimal and non-disruptive, focusing only on colors and typography.
+   Noel Aveta Studio - ULTRA LUXURY DARK THEME for Decap CMS 
+   Avant-garde editorial aesthetics for maximum visual impact.
 */
 
 :root {
-  --cms-color-base: #141414;
-  --cms-color-primary: #8a735c; /* Gold/Beige */
-  --cms-color-bg: #fdfdfd;
-  --cms-color-card: #ffffff;
-  --cms-border-color: #eaeaea;
+  --cms-color-base: #f9f9f9; /* Text color */
+  --cms-color-primary: #a38c71; /* High-end beige/gold */
+  --cms-color-primary-hover: #bda68a;
+  --cms-color-bg: #0a0a0a; /* Deep satisfying black */
+  --cms-color-sidebar: #111111; 
+  --cms-color-card: #141414;
+  --cms-border-color: #2a2a2a;
   --cms-font-main: 'Montserrat', sans-serif;
-  --cms-border-radius: 8px;
+  --cms-border-radius: 4px; /* Sharper edges for luxury feel */
 }
 
 /* 1. GLOBAL TYPOGRAPHY */
 body, [class*="nc-app"], [class*="nc-entryEditor"], [class*="Container"], button, input, textarea, h1, h2, h3, h4, span, p, a, div {
   font-family: var(--cms-font-main) !important;
+  color: var(--cms-color-base) !important;
+}
+
+/* Hide default Decap scrollbars / style them dark */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cms-color-bg); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cms-color-primary); 
+  border-radius: 4px;
 }
 
 /* 2. TOP HEADER BAR */
 [class*="AppHeader"] {
-  background-color: var(--cms-color-base) !important;
-  border-bottom: 2px solid var(--cms-color-primary) !important;
+  background-color: var(--cms-color-sidebar) !important;
+  border-bottom: 1px solid var(--cms-border-color) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
 }
 
-[class*="AppHeader"] a {
-  font-weight: 500 !important;
+/* Logo image scaling if present */
+[class*="AppHeader"] img {
+  filter: brightness(0) invert(1) !important; /* Make sure the logo is white on black */
+}
+
+[class*="AppHeaderSiteLink"], [class*="AppHeaderNavList"] a {
+  font-weight: 400 !important;
   text-transform: uppercase !important;
-  color: #eeeeee !important;
+  letter-spacing: 3px !important;
+  color: #888888 !important;
+  font-size: 11px !important;
+  transition: all 0.3s ease !important;
+}
+
+[class*="AppHeaderNavList"] a:hover {
+  color: var(--cms-color-primary) !important;
 }
 
 [class*="AppHeaderNavList"] a[class*="active"] {
+  color: var(--cms-color-primary) !important;
   border-bottom: 2px solid var(--cms-color-primary) !important;
 }
 
 /* 3. MAIN DASHBOARD CONTENT AREA */
-/* Change background colors safely */
 [class*="AppMainContainer"] {
   background-color: var(--cms-color-bg) !important;
 }
 
-/* Revert the massive paddings and borders causing blocks */
 [class*="CollectionTop"] {
   background-color: transparent !important;
-  /* Rimossi padding ingombranti */
 }
 
-/* Sidebar safe styling */
+[class*="CollectionTopHeading"] {
+  font-weight: 300 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  font-size: 24px !important;
+}
+
+/* Sidebar styling */
 [class*="SidebarContainer"] {
-  background-color: #fafafa !important;
+  background-color: var(--cms-color-sidebar) !important;
   border-right: 1px solid var(--cms-border-color) !important;
 }
 
-/* Cards (e.g. "Homepage & Contenuti") */
+[class*="SidebarHeading"] {
+  color: #555555 !important;
+  font-size: 10px !important;
+  letter-spacing: 4px !important;
+}
+
+[class*="SearchContainer"] input {
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: #fff !important;
+  border-radius: 20px !important;
+}
+
+[class*="SearchContainer"] input:focus {
+  border-color: var(--cms-color-primary) !important;
+  background-color: #222 !important;
+}
+
+[class*="SidebarNavLink"] {
+  border-radius: 0 !important;
+  border-left: 2px solid transparent !important;
+  color: #aaaaaa !important;
+  letter-spacing: 1px !important;
+  font-size: 13px !important;
+  background-color: transparent !important;
+}
+
+[class*="SidebarNavLink"]:hover {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+[class*="SidebarNavLinkActive"] {
+  background-color: #111111 !important;
+  color: var(--cms-color-primary) !important;
+  border-left: 2px solid var(--cms-color-primary) !important;
+}
+
+/* Dashboard Cards */
 [class*="CardContainer"], [class*="EntryCard"] {
   background-color: var(--cms-color-card) !important;
   border-radius: var(--cms-border-radius) !important;
   border: 1px solid var(--cms-border-color) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
 }
 
 [class*="CardContainer"]:hover, [class*="EntryCard"]:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
-  border-color: #d0d0d0 !important;
+  transform: translateY(-5px) !important;
+  border-color: var(--cms-color-primary) !important;
+  box-shadow: 0 15px 40px rgba(138, 115, 92, 0.1) !important;
+}
+
+[class*="CardTitle"] {
+  color: #eeeeee !important;
+  font-weight: 400 !important;
+  letter-spacing: 1px !important;
 }
 
 /* 4. EDITOR PANE */
 [class*="ControlPaneContainer"] {
-  background-color: #fafafa !important;
+  background-color: var(--cms-color-bg) !important;
 }
 
-/* Focus states inside forms */
+/* Form Groups / Container */
+[class*="ControlContainer"] {
+  background-color: var(--cms-color-sidebar) !important;
+  border: 1px solid var(--cms-border-color) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+}
+
+/* Labels */
+[class*="ControlLabel"] {
+  color: #888888 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  font-size: 11px !important;
+  margin-bottom: 12px !important;
+  border-bottom: 1px solid #222 !important;
+  padding-bottom: 8px !important;
+}
+
+/* Text Inputs / Textareas / Selects */
+[class*="ControlContainer"] input[type="text"], 
+[class*="ControlContainer"] textarea,
+[class*="ControlContainer"] select {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  padding: 12px 14px !important;
+  transition: all 0.3s ease !important;
+}
+
 [class*="ControlContainer"] input:focus, 
 [class*="ControlContainer"] textarea:focus {
   border-color: var(--cms-color-primary) !important;
-  box-shadow: 0 0 0 2px rgba(138, 115, 92, 0.15) !important;
+  background-color: #222 !important;
+  box-shadow: 0 0 0 1px var(--cms-color-primary) !important;
+  outline: none !important;
 }
 
-/* Buttons */
+/* Image Widget specifically */
+[class*="ImageWrapper"] {
+  border: 1px dashed #444 !important;
+  background-color: #111 !important;
+}
+
+/* Hints */
+[class*="Hint"] {
+  color: #777777 !important;
+  background-color: #141414 !important;
+  border-left: 2px solid var(--cms-color-primary) !important;
+  padding: 8px 12px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Buttons (Save / Publish) */
 [class*="Button"] {
   font-family: var(--cms-font-main) !important;
   text-transform: uppercase !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+[class*="ToolbarContainer"] {
+  background-color: rgba(10,10,10,0.9) !important;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--cms-border-color) !important;
+}
+
+/* Primary "Publish" Button inside the Editor */
+[class*="ToolbarContainer"] button[class*="css-"] {
+  background-color: var(--cms-color-primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+[class*="ToolbarContainer"] button[class*="css-"]:hover {
+  background-color: var(--cms-color-primary-hover) !important;
+  box-shadow: 0 4px 15px rgba(138, 115, 92, 0.4) !important;
+}
+
+/* Preview Pane Header */
+[class*="PreviewPaneContainer"] {
+  border-left: 1px solid var(--cms-border-color) !important;
 }
