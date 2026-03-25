@@ -19,41 +19,7 @@
     <!-- Decap CMS main script -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     
-    <script>
-      // 1. Carica lo stile del sito globale nell'anteprima
-      CMS.registerPreviewStyle("/css/style.css");
-
-      // 2. Crea un layout visuale personalizzato per la "Homepage Edit"
-      var HomepagePreview = createClass({
-        render: function() {
-          var entry = this.props.entry;
-          // Estrai i dati correnti che l'utente sta digitando
-          var data = entry.getIn(['data']).toJS();
-          
-          return h('div', { className: 'content-wrapper' },
-            // Hero Visual Preview
-            h('section', { className: 'hero-section', style: { position: 'relative', background: '#111', color: '#fff', padding: '6rem 2rem', textAlign: 'center' } },
-              h('h1', { className: 'hero-title', style: { fontSize: '4rem', margin: '0 0 1rem 0' } }, "NOEL AVETA STUDIO"),
-              h('p', { style: { letterSpacing: '2px', textTransform: 'uppercase', fontSize: '1.2rem', color: '#ccc' } }, data.hero ? data.hero.subtitle : '')
-            ),
-            
-            // About Visual Preview
-            h('section', { className: 'about-section', style: { padding: '4rem 2rem', background: '#fcfcfc', color: '#333' } },
-              h('div', { className: 'container' },
-                h('h2', { className: 'section-title', style: { fontSize: '2.5rem', marginBottom: '2rem' } }, data.about ? data.about.title : ''),
-                h('div', { 
-                  className: 'section-text', 
-                  style: { fontSize: '1.1rem', lineHeight: '1.8', maxWidth: '800px' },
-                  dangerouslySetInnerHTML: { __html: data.about && data.about.text ? data.about.text.replace(/\n/g, '<br/>') : '' } 
-                })
-              )
-            )
-          );
-        }
-      });
-
-      // Registra il template per la collection 'homepage'
-      CMS.registerPreviewTemplate("homepage", HomepagePreview);
-    </script>
+    <!-- Custom Preview Template -->
+    <script src="/admin/preview.js"></script>
   </body>
 </html>
